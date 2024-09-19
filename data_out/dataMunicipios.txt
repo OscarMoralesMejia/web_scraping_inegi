@@ -1,0 +1,24 @@
+estado_id, estado, municipio, latitud, longitud, altitud
+1, Aguascalientes, Aguascalientes a/, 21.879822, -102.296046, 1 878
+1, Aguascalientes, Asientos, 22.238317, -102.089275, 2 167
+1, Aguascalientes, Calvillo, 21.846907, -102.718750, 1 634
+1, Aguascalientes, Cosío, 22.366409, -102.300044, 2 005
+1, Aguascalientes, El Llano, 21.918869, -101.965307, 2 030
+1, Aguascalientes, Jesús María, 21.961273, -102.343416, 1 877
+1, Aguascalientes, Pabellón de Arteaga, 22.149201, -102.276541, 1 911
+1, Aguascalientes, Rincón de Romos, 22.229232, -102.323068, 1 948
+1, Aguascalientes, San Francisco de los Romo, 22.072392, -102.272678, 1 892
+1, Aguascalientes, San José de Gracia, 22.150216, -102.415634, 2 051
+1, Aguascalientes, Tepezalá, 22.224227, -102.166971, 2 101
+2, Baja California, Ensenada, 31.808944, -116.595134, 18
+2, Baja California, Mexicali a/, 32.641176, -115.475578, 0
+2, Baja California, Playas de Rosarito, 32.363684, -117.054459, 25
+2, Baja California, San Felipe, 31.022920, -114.838901, 10
+2, Baja California, San Quintín, 30.556485, -115.939061, 27
+2, Baja California, Tecate, 32.572678, -116.626550, 526
+2, Baja California, Tijuana, 32.532460, -117.018913, 22
+3, Baja California Sur, Comondú, 25.034635, -111.673339, 49
+3, Baja California Sur, La Paz a/, 24.148745, -110.306590, 31
+3, Baja California Sur, Loreto, 26.012778, -111.343333, 1
+3, Baja California Sur, Los Cabos, 23.061591, -109.694749, 17
+3, Baja California Sur, Mulegé, 27.336868, -112.268274, 3
