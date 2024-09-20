@@ -72,7 +72,7 @@ def scraping_municipios_inegi():
             #service = Service(executable_path='D:/Home/Mis_proyectos/web_scraping_inegi/chrome/chromedriver.exe')
             
             #ubicación productiva
-            service = Service(executable_path='chrome/chromedriver.exe/chromedriver.exe')
+            service = Service(executable_path='chrome/chromedriver.exe')
             
             options = webdriver.ChromeOptions()
             driver = webdriver.Chrome(service=service, options=options)
