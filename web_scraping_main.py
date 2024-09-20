@@ -50,7 +50,10 @@ def scraping_municipios_inegi():
         for i,edo in enumerate(estado):
             # Configuración del WebDriver (ajusta el path según tu sistema)
             #service = Service(executable_path='D:/Home/Cursos/Henry/WEB_scraping/chromedriver-win64/chromedriver.exe')
-            service = Service(executable_path='D:/Home/Mis_proyectos/web_scraping_inegi/chrome/chromedriver.exe')
+            #service = Service(executable_path='D:/Home/Mis_proyectos/web_scraping_inegi/chrome/chromedriver.exe')
+            
+            #ubicación productiva
+            service = Service(executable_path='chrome/chromedriver.exe/chromedriver.exe')
             
             options = webdriver.ChromeOptions()
             driver = webdriver.Chrome(service=service, options=options)
