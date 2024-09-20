@@ -47,7 +47,7 @@ def write_headers_and_append_json(data_list, file_name):
             json_response.append(data)
     
     # Retornar la lista de datos en formato JSON
-    return json.dumps(json_response, ensure_ascii=False, indent=4)
+    return json_response#json.dumps(json_response, ensure_ascii=False, indent=0)
 
 
 @app.get("/municipios_de_estados")
@@ -75,6 +75,10 @@ def scraping_municipios_inegi():
             service = Service(executable_path='chrome/chromedriver.exe')
             
             options = webdriver.ChromeOptions()
+            options.add_argument("--headless")  # Ejecutar en modo headless
+            options.add_argument("--no-sandbox")  # Evitar problemas de permisos
+            options.add_argument("--disable-dev-shm-usage")  # Usar memoria compartida de forma eficiente
+
             driver = webdriver.Chrome(service=service, options=options)
             # Abre la página web
             driver.get('https://www.inegi.org.mx/app/cuadroentidad/CDMX/2023/01/1_2')
