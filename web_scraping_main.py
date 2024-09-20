@@ -9,6 +9,7 @@ import time
 import pandas as pd
 
 from fastapi import FastAPI,HTTPException
+import json
 
 app = FastAPI()
 
@@ -29,6 +30,24 @@ def write_headers_and_append(data_list, file_name):
             line = ', '.join([str(value) for value in data.values()])
             file.write(line + '\n')
 
+
+
+def write_headers_and_append_json(data_list, file_name):
+    # Crear una lista para almacenar los registros en formato JSON
+    json_response = []
+    
+    # Abrir el archivo en modo de anexar (append mode) para agregar los registros
+    with open(file_name, 'a', encoding='utf-8') as file:
+        for data in data_list:
+            # Convertir cada diccionario en una línea de texto para el archivo
+            line = ', '.join([str(value) for value in data.values()])
+            file.write(line + '\n')
+            
+            # Agregar el diccionario a la respuesta JSON
+            json_response.append(data)
+    
+    # Retornar la lista de datos en formato JSON
+    return json.dumps(json_response, ensure_ascii=False, indent=4)
 
 
 @app.get("/municipios_de_estados")
@@ -103,11 +122,11 @@ def scraping_municipios_inegi():
             for item in data:
                 mun={"estado_id":i+1,"estado":edo,"municipio":item[0],"latitud":item[1],"longitud":item[2],"altitud":item[3]}
                 lista.append(mun)
-            write_headers_and_append(lista, file_name)
+            respuesta=write_headers_and_append_json(lista, file_name)
     
-        msj="Se ha generado el archivo con los municipios"
+        #msj="Se ha generado el archivo con los municipios"
         
-        respuesta = msj
+        #respuesta = msj
     
     except Exception as e:
         print(f"Ocurrió un error: {e}")
