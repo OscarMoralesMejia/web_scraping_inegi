@@ -61,6 +61,7 @@ def scraping_municipios_inegi():
         str: Un mensaje de terminación de proceso
     """
     respuesta=''
+    respuesta_total=[]
     try:
         header=["estado_id","estado","municipio","latitud","longitud","altitud"]
         write_headers(header,file_name)
@@ -127,7 +128,9 @@ def scraping_municipios_inegi():
                 mun={"estado_id":i+1,"estado":edo,"municipio":item[0],"latitud":item[1],"longitud":item[2],"altitud":item[3]}
                 lista.append(mun)
             respuesta=write_headers_and_append_json(lista, file_name)
-    
+            #respuesta_total.append(respuesta)
+            respuesta_total+=respuesta
+
         #msj="Se ha generado el archivo con los municipios"
         
         #respuesta = msj
@@ -135,4 +138,4 @@ def scraping_municipios_inegi():
     except Exception as e:
         print(f"Ocurrió un error: {e}")
         
-    return respuesta
+    return respuesta_total
